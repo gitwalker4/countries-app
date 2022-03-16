@@ -1,6 +1,6 @@
 {
-  "homepage": "http://gitwalker4.github.io/react-app",
-  "name": "my-app",
+  "homepage": "http://gitwalker4.github.io/stats-app",
+  "name": "stats-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
