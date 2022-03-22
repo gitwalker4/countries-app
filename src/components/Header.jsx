@@ -1,24 +1,18 @@
-import PropTypes from 'prop-types';
+import React from 'react'
+import Search from './Search'
 
-function Header({text, bgColor, textColor}) {
-  const headerStyles = {
-    backgroundColor: bgColor,
-    color: textColor
-  }
+const Header = ({searchCountry}) => {
 
   return (
-    <header style={headerStyles}>
-      <div className='container'>
-        <h2>{text}</h2>
+    <header>
+      <div className='header-content'>
+        <div className='container'>
+          <h1 className='country-header'>Countries of the World <span className='walker'> by Walker</span></h1>
+        </div>
+        <Search searchCountry={searchCountry} />
       </div>
     </header>
   )
-}
-
-Header.defaultProps = {
-  text: 'Baller Stats',
-  bgColor: 'rgba(10,20,57, 0.7)',
-  textColor: '#fff'
 }
 
 export default Header
