@@ -21,7 +21,7 @@ const CountryGrid = ({ countries, isLoading, filteredCountries, search }) => {
 
   
   if (isLoading) {
-    return <h1>Loading...</h1> 
+    return <h1 className='loading'>Loading...</h1> 
   } else if ( search.length > 1 ) {
     return (
       <div>
