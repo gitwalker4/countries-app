@@ -14,10 +14,6 @@ body {
   line-height: 1.6;
 }
 
-ul {
-  list-style: none;
-}
-
 header {
   width: 100%;
   margin-bottom: 1rem;
@@ -49,6 +45,7 @@ header {
 }
 
 .country-search {
+  text-transform: capitalize;
   height: 2.5rem;
   width: 20rem;
   padding-left: 0.5rem;
@@ -58,17 +55,22 @@ header {
 .cards {
   width: 70%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 400px;
   grid-gap: 1rem;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .card {
   cursor: pointer;
-  background-color: transparent;
+  background-color: none;
   height: 300px;
   perspective: 1000px;
-  box-shadow: 0px 0px 5px white;
+}
+
+.card, 
+.card img,
+.card-back {
   border-radius: 20px;
 }
 
@@ -83,7 +85,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
 }
 
 .card-inner {
@@ -92,6 +93,10 @@ header {
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
 .card-front,
@@ -105,20 +110,42 @@ header {
 
 .card-back {
   background-color: white;
-  color: #99738e;
   padding: 20px;
   transform: rotateY(180deg);
+  line-height: 35px;
 }
 
-.card li {
+.map-link {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.map-link:hover {
+  color: darkmagenta;
+}
+
+.card-back,
+.map-link {
+  color: #99738e;
+}
+
+.card-back h1 {
+  text-align: center;
+}
+
+.list-header {
+  display: inline;
+}
+
+.list-item {
   list-style: none;
-  padding-bottom: 10px;
+  display: inline;
 }
 
 @media (min-width: 850px) {
   .cards {
     width: 90%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 400px);
   }
 }
 
@@ -134,12 +161,12 @@ header {
 
 @media (min-width: 1300px) {
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 400px);
   }
 }
 
 @media (min-width: 1700px) {
   .cards {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 400px);
   }
 }
