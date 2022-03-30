@@ -10,7 +10,7 @@ const App = () => {
   const [search, setSearch] = useState('')
   const [filteredCountries, setFilteredCountries] = useState([])
 
-  const fetchSports = async () => {
+  const fetchCountries = async () => {
     setIsLoading(true)
     const result = await axios(`https://restcountries.com/v3.1/all`)
 
@@ -18,12 +18,13 @@ const App = () => {
     setIsLoading(false)
   }
 
-  const loadMore = () => {
-    setVisible(visible + 16)
+  const refreshPage = () => {
+    fetchCountries()
+    setSearch('')
   }
 
   useEffect(() => {
-    fetchSports()
+    fetchCountries()
   }, [])
 
   const searchItems = (searchValue) => {
@@ -41,8 +42,8 @@ const App = () => {
 
   return (
     <>
-      <Header searchCountry={searchItems} />
-      <CountryGrid isLoading={isLoading} countries={countries} filteredCountries={filteredCountries} search={search} visible={visible} loadMore={loadMore} />
+      <Header searchCountry={searchItems} refresh={refreshPage} />
+      <CountryGrid isLoading={isLoading} countries={countries} filteredCountries={filteredCountries} search={search} visible={visible} />
     </>
   )
 }

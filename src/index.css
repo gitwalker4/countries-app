@@ -25,6 +25,7 @@ header {
 .loading {
   text-align: center;
   margin-top: 100px;
+  color: white;
 }
 
 .walker {
@@ -123,7 +124,7 @@ header {
   width: 70%;
   display: grid;
   grid-template-columns: 400px;
-  grid-gap: 1rem;
+  grid-gap: 3rem;
   margin: -1450px auto 0;
   justify-content: center;
 }
@@ -186,7 +187,7 @@ header {
 
 .card-front {
   padding: 10px;
-  background-color: rgba(0,0,0, 0.4);
+  background-color: rgba(255,255, 255, 0.2);
 }
 
 .card-back {
@@ -223,21 +224,24 @@ header {
   display: inline;
 }
 
+.card-back p {
+  color: #f64c72;
+}
+
 .load {
-  width: 200px;
   padding: 10px;
   border-radius: 5px;
   font-size: 20px;
   color: white;
   border: 2px solid #f64c72;
-  background-color: rgba(250, 76, 114, 0.7);
+  background: none;
   cursor: pointer;
 }
 
-.loadDiv {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
+.load:hover {
+  background-color: rgba(246, 76, 114, 0.2);
+  -webkit-animation: breathing 3s ease-out infinite normal;
+  animation: breathing 3s ease-out infinite normal;
 }
 
 @media (min-width: 850px) {
@@ -251,10 +255,6 @@ header {
   .header-content {
     flex-direction: row;
   } 
-  
-  .cards {
-    margin-top: -1500px;
-  }
 
   .country-header {
     padding-bottom: 0;

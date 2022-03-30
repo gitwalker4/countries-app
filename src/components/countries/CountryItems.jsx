@@ -21,8 +21,8 @@ const CountryItems = ({item}) => {
           <div className='card-div'>
             <h2 className='list-header'>Official Language(s): </h2>
             {item.languages &&
-              Object.values(item.languages).map((language,index) => {
-              return <p key={index}>{language}</p>
+              Object.values(item.languages).slice(0,2).map((language,index) => {
+              return <p key={index} className='languages'>{language}</p>
             })}  
           </div>
           <div className='card-div'>
