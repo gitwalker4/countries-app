@@ -14,17 +14,17 @@ const CountryItems = ({item}) => {
   }
 
   const setLanguages = languagesArray.map((language, index) => {
-    return <li className='list-item' key={index}> {`${language}`}</li>
+    return <li className='list-item' key={index}>{`${language}`}</li>
   })
 
   const setBorders = bordersArray.map((border, index)=> {
-    return <li className='list-item' key={index}> {`${border}`}</li>
+    return <li className='list-item' key={index}>{`${border}`}</li>
   })
 
   console.log(setBorders)
 
   return (item.borders) ? (
-    <div className='card'>
+    <div className='card' loading='lazy'>
       <div className='card-inner'>
         <div className='card-front'>
           <img src={item.flags.svg} alt='' />

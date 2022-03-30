@@ -9,12 +9,12 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #004;
-  color: #fff;
+  background-color: white;
   line-height: 1.6;
 }
 
 header {
+  height: 1600px;
   width: 100%;
   margin-bottom: 1rem;
   padding: 20px 0;
@@ -27,7 +27,7 @@ header {
 
 .walker {
   font-family: 'Hurricane', serif;
-  color: white;
+  color:  rgba(0, 0, 0, 0.7);
 }
 
 .header-content {
@@ -50,6 +50,7 @@ header {
   width: 20rem;
   padding-left: 0.5rem;
   border-radius: 5px;
+  border: 2px solid #f64c72;
 }
 
 .cards {
@@ -57,34 +58,32 @@ header {
   display: grid;
   grid-template-columns: 400px;
   grid-gap: 1rem;
-  margin: 0 auto;
+  margin: -1450px auto 0;
   justify-content: center;
 }
 
 .card {
-  cursor: pointer;
   background-color: none;
   height: 300px;
   perspective: 1000px;
 }
 
 .card, 
-.card img,
+.card-front,
 .card-back {
   border-radius: 20px;
 }
 
 .card h1 {
-  font-size: 25px;
-  border-bottom: 1px #fff solid;
+  font-size: 30px;
   padding-bottom: 10px;
-  margin-bottom: 10px;
 }
 
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 3px;
 }
 
 .card-inner {
@@ -102,14 +101,19 @@ header {
 .card-front,
 .card-back {
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: #f64c72 2px solid;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+.card-front {
+  padding: 20px;
+}
+
 .card-back {
-  background-color: white;
   padding: 20px;
   transform: rotateY(180deg);
   line-height: 35px;
@@ -126,7 +130,7 @@ header {
 
 .card-back,
 .map-link {
-  color: #99738e;
+  color: white;
 }
 
 .card-back h1 {
@@ -142,6 +146,21 @@ header {
   display: inline;
 }
 
+.load {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 2px solid #f64c72;
+  cursor: pointer;
+}
+
+.loadDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 @media (min-width: 850px) {
   .cards {
     width: 90%;
@@ -152,7 +171,11 @@ header {
 @media (min-width: 950px) {
   .header-content {
     flex-direction: row;
-  }  
+  } 
+  
+  .cards {
+    margin-top: -1500px;
+  }
 
   .country-header {
     padding-bottom: 0;
@@ -167,6 +190,6 @@ header {
 
 @media (min-width: 1700px) {
   .cards {
-    grid-template-columns: repeat(4, 400px);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
