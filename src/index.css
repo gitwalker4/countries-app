@@ -18,6 +18,8 @@ header {
   width: 100%;
   margin-bottom: 1rem;
   padding: 20px 0;
+  background-image: url('./images/skyline.jpg');
+  background-size: cover;
 }
 
 .loading {
@@ -27,7 +29,7 @@ header {
 
 .walker {
   font-family: 'Hurricane', serif;
-  color:  rgba(0, 0, 0, 0.7);
+  color: white;
 }
 
 .header-content {
@@ -46,11 +48,20 @@ header {
 
 .country-search {
   text-transform: capitalize;
+  color: white;
   height: 2.5rem;
   width: 20rem;
   padding-left: 0.5rem;
-  border-radius: 5px;
-  border: 2px solid #f64c72;
+  border: 1px solid #f64c72;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  background-color: #000;
+}
+
+::placeholder {
+  color: white;
 }
 
 .cards {
@@ -68,10 +79,21 @@ header {
   perspective: 1000px;
 }
 
+.card-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-div p {
+  margin-top: 5px;
+}
+
 .card, 
 .card-front,
-.card-back {
-  border-radius: 20px;
+.card-back,
+.card img {
+  border-radius: 50px;
 }
 
 .card h1 {
@@ -83,7 +105,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 3px;
 }
 
 .card-inner {
@@ -100,9 +121,8 @@ header {
 
 .card-front,
 .card-back {
+  border: white 3px solid;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: #f64c72 2px solid;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -110,11 +130,13 @@ header {
 }
 
 .card-front {
-  padding: 20px;
+  padding: 10px;
+  background-color: rgba(0,0,0, 0.4);
 }
 
 .card-back {
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
   transform: rotateY(180deg);
   line-height: 35px;
 }
@@ -125,7 +147,7 @@ header {
 }
 
 .map-link:hover {
-  color: darkmagenta;
+  color: #f64c72;
 }
 
 .card-back,
@@ -151,7 +173,9 @@ header {
   padding: 10px;
   border-radius: 5px;
   font-size: 20px;
+  color: white;
   border: 2px solid #f64c72;
+  background-color: rgba(250, 76, 114, 0.7);
   cursor: pointer;
 }
 
