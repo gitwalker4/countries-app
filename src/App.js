@@ -21,6 +21,7 @@ const App = () => {
   const refreshPage = () => {
     fetchCountries()
     setSearch('')
+    setVisible(16)
   }
 
   useEffect(() => {
@@ -33,7 +34,6 @@ const App = () => {
       const filteredCountries = countries.filter((item) => {
         return Object.values(item.name).join('').toLowerCase().includes(search.toLowerCase())
       })
-      console.log(filteredCountries)
       setFilteredCountries(filteredCountries)
     } else {
       setFilteredCountries(countries)

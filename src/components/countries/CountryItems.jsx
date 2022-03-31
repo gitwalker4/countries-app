@@ -16,14 +16,17 @@ const CountryItems = ({item}) => {
           </div>
           <div className='card-div'>
             <h2>Population: </h2>
-            <p>{item.population}</p>
+            <p>{item.population.toLocaleString()}</p>
           </div>
           <div className='card-div'>
             <h2 className='list-header'>Official Language(s): </h2>
-            {item.languages &&
-              Object.values(item.languages).slice(0,2).map((language,index) => {
-              return <p key={index} className='languages'>{language}</p>
-            })}  
+            <div className='language-div'>
+              {item.languages &&
+                Object.values(item.languages).slice(0,2).map((language,index) => {
+                  return <p key={index} className='languages'>{language}</p>
+                })
+              }
+            </div>  
           </div>
           <div className='card-div'>
             <h2>Continent: </h2>

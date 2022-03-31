@@ -8,7 +8,8 @@ const Header = ({searchCountry, refresh}) => {
     <header>
       <div className='header-content'>
         <div className='container'>
-          <h1 className='country-header'>Countries of the World <span className='walker'> by Walker</span></h1>
+          <h1 className='country-header'>Countries of the World</h1>
+          <h2 className='walker'> by Walker</h2>
         </div>
         <Search searchCountry={searchCountry} />
         <Reload refresh={refresh} />

@@ -11,6 +11,8 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
   line-height: 1.6;
+  background-image: url('./images/skyline.jpg');
+  background-size: cover;
 }
 
 header {
@@ -18,8 +20,6 @@ header {
   width: 100%;
   margin-bottom: 1rem;
   padding: 20px 0;
-  background-image: url('./images/skyline.jpg');
-  background-size: cover;
 }
 
 .loading {
@@ -30,14 +30,17 @@ header {
 
 .walker {
   font-family: 'Hurricane', serif;
+  font-size: 35px;
+  text-align: center;
   color: white;
 }
 
 .header-content {
-  width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
 }
@@ -60,6 +63,33 @@ header {
   border-bottom-style: solid;
   background-color: #000;
 }
+
+.country-search,
+.load {
+  margin-top: 20px;
+}
+
+.load {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  border: 2px solid #f64c72;
+  background: none;
+  cursor: pointer;
+}
+
+.load:hover {
+  background-color: rgba(246, 76, 114, 0.2);
+  -webkit-animation: breathing 3s ease-out infinite normal;
+  animation: breathing 3s ease-out infinite normal;
+}
+
+.load-div {
+  display: flex;
+  justify-content: center;
+}
+
 
 ::placeholder {
   color: white;
@@ -125,7 +155,7 @@ header {
   display: grid;
   grid-template-columns: 400px;
   grid-gap: 3rem;
-  margin: -1450px auto 0;
+  margin: -1330px auto 140px;
   justify-content: center;
 }
 
@@ -149,7 +179,7 @@ header {
 .card-front,
 .card-back,
 .card img {
-  border-radius: 50px;
+  border-radius: 30px;
 }
 
 .card h1 {
@@ -228,20 +258,14 @@ header {
   color: #f64c72;
 }
 
-.load {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  color: white;
-  border: 2px solid #f64c72;
-  background: none;
-  cursor: pointer;
+.language-div {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
 }
 
-.load:hover {
-  background-color: rgba(246, 76, 114, 0.2);
-  -webkit-animation: breathing 3s ease-out infinite normal;
-  animation: breathing 3s ease-out infinite normal;
+.languages {
+  padding-left: 3px;
 }
 
 @media (min-width: 850px) {
@@ -252,18 +276,40 @@ header {
 }
 
 @media (min-width: 950px) {
+  .cards {
+    margin-top: -1450px;
+  }
+
   .header-content {
     flex-direction: row;
-  } 
+  }
 
-  .country-header {
-    padding-bottom: 0;
+  .country-search {
+    margin-top: 0px;
+  }
+  
+  .country-search,
+  .load {
+    margin-left: 10px;
+  }
+
+  .country-header,
+  .walker {
+    display: inline;
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 1155px) {
+  .load {
+    margin-top: 0px;
   }
 }
 
 @media (min-width: 1300px) {
   .cards {
     grid-template-columns: repeat(3, 400px);
+    margin-top: -1500px;
   }
 }
 
